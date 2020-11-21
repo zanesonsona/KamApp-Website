@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>KamApp</title>
+
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" 
+        crossorigin="anonymous">
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Acme&family=Nanum+Myeongjo:wght@400;800&display=swap" rel="stylesheet">
+
+        <!-- css -->
+        <link rel="stylesheet" href="css/users.css">
+
+        <!-- firebase setup -->
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.2/firebase-firestore.js"></script>
+
+    </head>
+
+    <body>
+        <!-- Nav Bar -->
+        <div>
+            <header>
+                <div class="logo">
+                    <h1 class="logo-text">Kam<span>App</span>: Brgy. Kamagayan mobile app</h1>
+                </div>
+                <i class="fa fa-bars menu-toggle"></i>
+                <ul class="nav">
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-user"></i>
+                            Admin
+                            <i class="fa fa-chevron-down arrow-down"></i>
+                        </a>
+                        <ul>
+                            <li><a href="#">Dashboard</a></li>
+                            <li><a href="#" class="logout">Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </header>
+            <div class="sidebar">
+                <ul class="sidebar-ul">
+                    <li><a href="index.html"><i class="fa fa-bullhorn"> Announcements</i></a></li>
+                    <li><a href=suggestion.html><i class="fa fa-lightbulb"> Suggestions</i></a></li>
+                    <li class="click"><a href="users.html"><i class="fa fa-user"> Manage Users</i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope"> Contact</i></a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="users">
+                <h2 class="Title">Users</h2>
+
+                <form id="searchUser">
+                    <input type="text" name="name" id="seesee" placeholder="Search Here:">
+                </form>
+                <ul class="sepUL" id="ulist"></ul>
+            </div>
+        </div>
+
+
+        <!-- Firebase Setup -->
+        <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyBg79LNv0L0ds0rYXvHhjbIVlKSlUxUf68",
+            authDomain: "kamapp-fb9d7.firebaseapp.com",
+            databaseURL: "https://kamapp-fb9d7.firebaseio.com",
+            projectId: "kamapp-fb9d7",
+            storageBucket: "kamapp-fb9d7.appspot.com",
+            messagingSenderId: "671209274787",
+            appId: "1:671209274787:web:cc9b9566f747609610ae16",
+            measurementId: "G-6ES5G2TNEG"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        </script>
+
+        <script src="js/users.js"></script>
+    </body>
+</html> 
